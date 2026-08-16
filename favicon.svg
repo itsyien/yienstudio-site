@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Yien Studio">
+  <defs>
+    <radialGradient id="orb" cx="38%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#6ec0ff"/>
+      <stop offset="45%" stop-color="#2f7fd6"/>
+      <stop offset="100%" stop-color="#164a8c"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#orb)"/>
+  <!-- Geometric white Y matching studio mark -->
+  <path
+    fill="#ffffff"
+    d="M14.5 13h12.2l5.3 14.2L37.3 13H49.5L37.8 36.2V51H26.2V36.2Z"
+  />
+</svg>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://games.yienstudio.workers.dev/sitemap.xml
