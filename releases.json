@@ -1,0 +1,54 @@
+{
+  "version": {
+    "version": "v1.1",
+    "date": "2026-10-05",
+    "note": "CitixChase added — two-player city pursuit. One city, two drivers."
+  },
+  "games": {
+    "citixchase": {
+      "githubRepo": "itsyien/CitixChase",
+      "downloadUrl": "https://github.com/itsyien/CitixChase/releases/download/v1.2.0.0/CitixChaseV1.2.zip",
+      "downloadLabel": "Download for PC (.zip)"
+    },
+    "yien-royale-2": {
+      "downloadUrl": "https://drive.google.com/uc?id=1UK3OhbiJX5h898V4vUyLOXAeUtWfxZev&export=download",
+      "downloadLabel": "Download for PC (.exe / .zip)"
+    },
+    "lava-parkour": {
+      "downloadUrl": "https://drive.google.com/uc?id=1xLVQLodLcBYKkg4mnuralWLC89dD_Csc&export=download",
+      "downloadLabel": "Download for PC (.exe / .zip)"
+    },
+    "undead-rush": {
+      "downloadUrl": "https://drive.google.com/uc?id=13DLH_gAOB4ch5BkUEFNt41tGVJ3Tdixm&export=download",
+      "downloadLabel": "Download for PC (.exe / .zip)"
+    },
+    "yien-royale-legacy": {
+      "downloadUrl": "https://drive.google.com/uc?id=16F_lNJxqTqQK9Ijg8QE3uipwytfERzpg&export=download",
+      "downloadLabel": "Download for PC (.exe / .zip)"
+    }
+  },
+  "apps": {
+    "the-void": {
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1hx3-zOztaLalQve4rdkib8TRv88L1yF5",
+      "downloadLabel": "Download for Windows (.exe)"
+    },
+    "internet-planetarium": {
+      "downloadUrl": "https://chromewebstore.google.com/detail/internet-planetarium/jgdedhcnolmldlkellnjdhgngieibdhc",
+      "downloadLabel": "Get Chrome extension"
+    },
+    "pureflow-launcher": {
+      "downloadUrl": "https://drive.google.com/uc?id=1_ehqTsU6lJ0UAQf2xgje-K8J3dHoorHz&export=download",
+      "downloadLabel": "Download for Android (APK)"
+    }
+  },
+  "experimental": {
+    "latch": {
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=17fpBoZW23Xvd1g4b6BKG5Q7VFMIWXuns",
+      "downloadLabel": "Download for Windows (.exe)"
+    },
+    "the-void-v2": {
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1hx3-zOztaLalQve4rdkib8TRv88L1yF5",
+      "downloadLabel": "Download v2.0 (.exe)"
+    }
+  }
+}

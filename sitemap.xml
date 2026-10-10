@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://games.yienstudio.workers.dev/contributors/dustin-guo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://games.yienstudio.workers.dev/apps/internet-planetarium</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
