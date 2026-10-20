@@ -39,16 +39,16 @@
     "pureflow-launcher": {
       "downloadUrl": "https://drive.google.com/uc?id=1_ehqTsU6lJ0UAQf2xgje-K8J3dHoorHz&export=download",
       "downloadLabel": "Download for Android (APK)"
+    },
+    "the-void-v2": {
+      "downloadUrl": "https://drive.google.com/uc?export=download&id=1hx3-zOztaLalQve4rdkib8TRv88L1yF5",
+      "downloadLabel": "Download v2.0 (.exe)"
     }
   },
   "experimental": {
     "latch": {
       "downloadUrl": "https://drive.google.com/uc?export=download&id=17fpBoZW23Xvd1g4b6BKG5Q7VFMIWXuns",
       "downloadLabel": "Download for Windows (.exe)"
-    },
-    "the-void-v2": {
-      "downloadUrl": "https://drive.google.com/uc?export=download&id=1hx3-zOztaLalQve4rdkib8TRv88L1yF5",
-      "downloadLabel": "Download v2.0 (.exe)"
     }
   }
 }
