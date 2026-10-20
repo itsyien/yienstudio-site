@@ -1,0 +1,15 @@
+name = "games"
+main = "worker/index.js"
+compatibility_date = "2026-10-09"
+workers_dev = true
+keep_vars = true
+
+[assets]
+directory = "."
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
+
+[[kv_namespaces]]
+binding = "RELEASES"
+id = "8ce65ef4580449ee9f19c94544dca769"

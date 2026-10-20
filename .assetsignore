@@ -1,0 +1,9 @@
+# Deployment sources and local tooling are not public Worker assets.
+worker/
+scripts/
+wrangler.toml
+.assetsignore
+.git/
+.github/
+.wrangler/
+node_modules/
