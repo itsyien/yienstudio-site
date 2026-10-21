@@ -43,6 +43,12 @@
     "the-void-v2": {
       "downloadUrl": "https://drive.google.com/uc?export=download&id=1hx3-zOztaLalQve4rdkib8TRv88L1yF5",
       "downloadLabel": "Download v2.0 (.exe)"
+    },
+    "wordrove": {
+      "version": "1.0.2",
+      "downloadLabel": "Download for Android (APK)",
+      "websiteUrl": "https://wordrove.yienstudio.net",
+      "downloadUrl": "https://github.com/itsyien/yienstudio-site/releases/download/wordrove-android-v1.0.2-preview/Wordrove-1.0.2-android-preview.apk"
     }
   },
   "experimental": {
