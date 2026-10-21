@@ -8,7 +8,7 @@ import {fileURLToPath} from 'node:url';
 const apiHash='4d1369b4386f729a5a2dc81eca24429cb402ca167282cede9f4fa2ffd6a73016';
 const namespace='8ce65ef4580449ee9f19c94544dca769';
 const root=new URL('../',import.meta.url);
-const files=new Map(await Promise.all(['wrangler.toml','worker/index.js','.assetsignore'].map(async name=>[name,await readFile(new URL(name,root),'utf8')])));
+const files=new Map(await Promise.all(['wrangler.toml','worker/index.js','.assetsignore'].map(async name=>[name,(await readFile(new URL(name,root),'utf8')).replaceAll('\r\n','\n')])));
 
 function value(section,key){const match=section.match(new RegExp('^'+key+'\\s*=\\s*(.+)$','m'));assert.ok(match,'Missing '+key);return JSON.parse(match[1].trim());}
 function verify(candidate){
