@@ -6,8 +6,7 @@
   },
   "games": {
     "citixchase": {
-      "githubRepo": "itsyien/CitixChase",
-      "downloadUrl": "https://github.com/itsyien/CitixChase/releases/download/v1.2.0.0/CitixChaseV1.2.zip",
+      "downloadUrl": "https://github.com/itsyien/CitixChase/releases/download/v2.9.0.0/CitixChase-v2.9.0.0-Windows.zip",
       "downloadLabel": "Download for PC (.zip)"
     },
     "yien-royale-2": {
