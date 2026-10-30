@@ -44,10 +44,10 @@
       "downloadLabel": "Download v2.0 (.exe)"
     },
     "wordrove": {
-      "version": "1.1.0",
+      "version": "1.1.2",
       "downloadLabel": "Download for Android (APK)",
       "websiteUrl": "https://wordrove.yienstudio.net",
-      "downloadUrl": "https://github.com/itsyien/yienstudio-site/releases/download/wordrove-android-v1.1.0/Wordrove-1.1.0-android.apk"
+      "downloadUrl": "https://github.com/itsyien/yienstudio-site/releases/download/wordrove-android-v1.1.2/Wordrove-1.1.2-android.apk"
     }
   },
   "experimental": {
