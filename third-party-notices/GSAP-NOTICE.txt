@@ -1,0 +1,7 @@
+GSAP and ScrollTrigger 3.15.0
+Copyright 2008-2026, GreenSock. All rights reserved.
+Subject to the terms at https://gsap.com/standard-license
+Author: Jack Doyle, jack@greensock.com
+
+This notice is copied from the installed GSAP package headers. The package
+points to the standard license above and does not include a separate license file.

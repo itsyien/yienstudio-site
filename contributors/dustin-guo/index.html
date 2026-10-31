@@ -52,6 +52,21 @@
       #root {
         min-height: 100vh;
       }
+      #adventure-opening { display: none; }
+      html[data-opening] { scrollbar-gutter: stable; }
+      html[data-opening='loading'], html[data-opening='entering'] { overflow: hidden; }
+      html[data-opening='loading'] .studio-home { visibility: hidden; }
+      html[data-opening='loading'] .site-bg { opacity: 0; }
+      html:is([data-opening='loading'],[data-opening='entering']) #adventure-opening {
+        display: block; position: fixed; inset: 0; z-index: 60; overflow: hidden;
+        background: #05070d; pointer-events: none;
+      }
+      html:is([data-opening='loading'],[data-opening='entering']) :is(.opening-copy,.studio-home header,.studio-hero-bottom > span,.cinematic-navigation) { opacity: 0; }
+      .opening-star-layer { position: absolute; inset: -100vh 0 auto; height: 300vh; background-size: 100% 100vh; background-repeat: repeat-y; animation: opening-drift 35s linear infinite; will-change: transform; }
+      @keyframes opening-drift { to { transform: translateY(-100vh); } }
+      html[data-opening='fallback'] #root { animation: opening-fallback 180ms ease-out; }
+      @keyframes opening-fallback { from { opacity: 0; } to { opacity: 1; } }
+      .opening-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
     </style>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
@@ -66,6 +81,7 @@
       fetchpriority="high"
     />
     <link rel="preload" href="/fonts/orbitron-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/oxanium-500-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/rajdhani-500.woff2" as="font" type="font/woff2" crossorigin />
 
     <script type="application/ld+json">
@@ -164,11 +180,66 @@
         ]
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-p0y6d8b5.js"></script>
+    <script type="module" crossorigin src="/assets/index-B44tyLMp.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/react-CKK0OxVB.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BhsSQvia.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-Btfz9-yD.css">
   </head>
   <body>
     <div id="root"></div>
+    <div id="adventure-opening" aria-live="polite" role="status">
+      <span class="opening-status">Preparing the scene</span>
+      <div class="opening-star-layer"></div><div class="opening-star-layer"></div><div class="opening-star-layer"></div>
+    </div>
+    <script>
+      (() => {
+        const cover = document.getElementById('adventure-opening')
+        let saved
+        try { saved = localStorage.getItem('yien-perf-mode') } catch {}
+        const historyReturn = performance.getEntriesByType('navigation')[0]?.type === 'back_forward'
+        if (location.pathname !== '/' || historyReturn || saved === 'lite' || matchMedia('(prefers-reduced-motion: reduce), (max-width: 768px), (pointer: coarse)').matches || /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent)) { cover.remove(); return }
+        const root = document.getElementById('root')
+        const boot = window.__yienOpening = { state: 'loading', timer: 0, release, fallback }
+        document.documentElement.dataset.opening = 'loading'
+        root.inert = true
+        root.setAttribute('aria-busy', 'true')
+        let seed = 21837
+        const random = () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296 }
+        cover.querySelectorAll('.opening-star-layer').forEach((layer, index) => {
+          const points = Array.from({ length: 32 }, () => `radial-gradient(circle at ${random()*100}% ${random()*100}%, rgba(170,201,255,${.3+random()*.5}) 0 ${.45+index*.25}px, transparent ${1+index*.4}px)`)
+          layer.style.backgroundImage = points.join(',')
+          layer.style.animationDuration = `${42-index*9}s`
+        })
+        function release() {
+          clearTimeout(boot.timer)
+          window.removeEventListener('wheel', interrupt)
+          window.removeEventListener('keydown', interrupt)
+          cover.remove()
+        }
+        function fallback() {
+          if (boot.state !== 'loading' && boot.state !== 'entering') return
+          boot.state = 'fallback'
+          document.documentElement.dataset.opening = 'fallback'
+          root.inert = false
+          root.removeAttribute('aria-busy')
+          release()
+          window.dispatchEvent(new Event('yien:opening-fallback'))
+        }
+        function interrupt(event) {
+          if (event.type === 'keydown' && event.key !== 'Escape') return
+          if (boot.state === 'loading') fallback()
+          else if (boot.state === 'entering') {
+            if (event.type === 'wheel') event.preventDefault()
+            window.dispatchEvent(new Event('yien:opening-skip'))
+            if (event.type === 'wheel') {
+              const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? innerHeight : 1
+              window.scrollBy({ top: event.deltaY * unit, behavior: 'instant' })
+            }
+          }
+        }
+        window.addEventListener('wheel', interrupt, { passive: false })
+        window.addEventListener('keydown', interrupt)
+        boot.timer = setTimeout(fallback, 8000)
+      })()
+    </script>
   </body>
 </html>

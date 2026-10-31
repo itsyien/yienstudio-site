@@ -6,6 +6,7 @@
   },
   "games": {
     "citixchase": {
+      "githubRepo": "itsyien/CitixChase",
       "downloadUrl": "https://github.com/itsyien/CitixChase/releases/download/v2.9.0.0/CitixChase-v2.9.0.0-Windows.zip",
       "downloadLabel": "Download for PC (.zip)"
     },
@@ -44,10 +45,10 @@
       "downloadLabel": "Download v2.0 (.exe)"
     },
     "wordrove": {
-      "version": "1.1.2",
+      "version": "1.1.0",
       "downloadLabel": "Download for Android (APK)",
       "websiteUrl": "https://wordrove.yienstudio.net",
-      "downloadUrl": "https://github.com/itsyien/yienstudio-site/releases/download/wordrove-android-v1.1.2/Wordrove-1.1.2-android.apk"
+      "downloadUrl": "https://github.com/itsyien/yienstudio-site/releases/download/wordrove-android-v1.1.0/Wordrove-1.1.0-android.apk"
     }
   },
   "experimental": {
