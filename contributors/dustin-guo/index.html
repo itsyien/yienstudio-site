@@ -75,9 +75,9 @@
     <link rel="preload" href="/fonts/geist-400-latin.woff2" as="font" type="font/woff2" crossorigin />
 
     
-    <script type="module" crossorigin src="/assets/index-B_35inKR.js"></script>
+    <script type="module" crossorigin src="/assets/index-jGsZTCIz.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/react-CKK0OxVB.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-CvKO6wRX.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-CYLekFoB.css">
   <style id="seo-fallback-style">.seo-fallback{box-sizing:border-box;max-width:70rem;margin:auto;padding:3rem 1.5rem 5rem;color:#e4ebff;font:16px/1.65 system-ui,sans-serif}.seo-fallback h1{font-size:clamp(2rem,6vw,4rem);line-height:1.1}.seo-fallback h2{margin-top:2rem}.seo-fallback a{color:#a5c9ff}.seo-fallback li{margin:.5rem 0}</style>
   </head>
   <body>
@@ -92,7 +92,11 @@
         let saved
         try { saved = localStorage.getItem('yien-perf-mode') } catch {}
         const historyReturn = performance.getEntriesByType('navigation')[0]?.type === 'back_forward'
-        if (location.pathname !== '/' || historyReturn || saved === 'lite' || matchMedia('(prefers-reduced-motion: reduce), (max-width: 768px), (pointer: coarse)').matches || /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent)) { cover.remove(); return }
+        const connection = navigator.connection
+        const slowConnection = connection?.saveData || ['slow-2g', '2g', '3g'].includes(connection?.effectiveType)
+        const forcedImmersive = saved === 'immersive' || saved === 'full' || saved === 'balanced'
+        const autoLite = !forcedImmersive && (!navigator.hardwareConcurrency || navigator.hardwareConcurrency < 8 || !navigator.deviceMemory || navigator.deviceMemory < 8 || slowConnection)
+        if (location.pathname !== '/' || historyReturn || saved === 'lite' || autoLite || matchMedia('(prefers-reduced-motion: reduce), (max-width: 768px), (pointer: coarse)').matches || /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent)) { cover.remove(); return }
         const root = document.getElementById('root')
         const boot = window.__yienOpening = { state: 'loading', timer: 0, release, fallback }
         document.documentElement.dataset.opening = 'loading'
